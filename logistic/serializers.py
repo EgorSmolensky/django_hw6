@@ -10,13 +10,12 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class ProductPositionSerializer(serializers.ModelSerializer):
-    product = serializers.IntegerField()
     quantity = serializers.IntegerField()
     price = serializers.FloatField()
 
     class Meta:
         model = StockProduct
-        fields = ['id', 'stock', 'product', 'quantity', 'price']
+        fields = ['product', 'quantity', 'price']
 
 
 class StockSerializer(serializers.ModelSerializer):
